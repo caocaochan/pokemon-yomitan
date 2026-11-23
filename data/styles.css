@@ -63,6 +63,7 @@
 
 [data-sc-pk="more"] { margin-top: 0.3em; }
 [data-sc-pk="more"] summary { cursor: pointer; opacity: 0.75; font-size: 0.9em; }
+[data-sc-pk="forms-title"] { margin-top: 0.3em; opacity: 0.75; font-size: 0.9em; }
 [data-sc-pk="forms"] { display: flex; flex-wrap: wrap; align-items: center; gap: 0.25em; }
 [data-sc-pk="form-noart"] { display: inline-block; width: 3.5em; text-align: center; opacity: 0.6; }
 [data-sc-pk="users"] { font-size: 0.9em; margin-top: 0.3em; }

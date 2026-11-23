@@ -478,8 +478,8 @@ impl Ctx<'_> {
                     }
                 })
                 .collect();
-            let items = vec![div("forms", items)];
-            out.push(details(&format!("{} Forms ({})", l(v, "形态", "形態"), varieties.len()), items));
+            out.push(div("forms-title", format!("{} Forms ({})", l(v, "形态", "形態"), varieties.len())));
+            out.push(div("forms", items));
         }
 
         // more
