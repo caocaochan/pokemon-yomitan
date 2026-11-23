@@ -459,20 +459,26 @@ impl Ctx<'_> {
                         Some(z) => format!("{z} {en}"),
                         None => en.to_string(),
                     };
-                    let mut c = Vec::new();
-                    if let Some(i) = self.poke_img.get(&p.id) {
-                        c.push(img(i, 3.5, "form-art"));
-                    }
-                    c.push(span("form-name", label));
+                    // name (and types when they differ from the default form) on hover
                     let t = db.poke_types.get(&p.id);
-                    if t != base_types {
-                        for &ty in t.into_iter().flatten() {
-                            c.push(self.type_badge(ty, v));
+                    let title = if t != base_types {
+                        let types: Vec<String> =
+                            t.into_iter().flatten().map(|&ty| self.bi(&db.type_name, ty, v)).collect();
+                        format!("{label}（{}）", types.join(" / "))
+                    } else {
+                        label
+                    };
+                    match self.poke_img.get(&p.id) {
+                        Some(i) => {
+                            let mut n = img(i, 3.5, "form-art");
+                            n["title"] = json!(title);
+                            n
                         }
+                        None => json!({"tag": "span", "title": title, "data": {"pk": "form-noart"}, "content": "？"}),
                     }
-                    div("form", c)
                 })
                 .collect();
+            let items = vec![div("forms", items)];
             out.push(details(&format!("{} Forms ({})", l(v, "形态", "形態"), varieties.len()), items));
         }
 
