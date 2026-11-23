@@ -42,10 +42,10 @@
 [data-sc-pk="facts"], [data-sc-pk="stats"], [data-sc-pk="move-stats"] {
   border-collapse: collapse; margin: 0.3em 0; font-size: 0.9em;
 }
-[data-sc-pk="facts"] th { text-align: left; font-weight: normal; opacity: 0.7; padding: 0.05em 0.6em 0.05em 0; white-space: nowrap; vertical-align: top; }
-[data-sc-pk="facts"] td { padding: 0.05em 0; }
-[data-sc-pk="stats"] th, [data-sc-pk="move-stats"] th { font-weight: normal; opacity: 0.7; padding: 0 0.35em; white-space: nowrap; }
-[data-sc-pk="stats"] td, [data-sc-pk="move-stats"] td { text-align: center; padding: 0 0.35em; border-top: 1px solid rgba(128, 128, 128, 0.4); }
+[data-sc-pk="facts"] th { text-align: left; font-weight: normal; padding: 0.25em 0.5em; white-space: nowrap; vertical-align: top; }
+[data-sc-pk="facts"] td { padding: 0.25em 0.5em; }
+[data-sc-pk="stats"] th, [data-sc-pk="move-stats"] th { font-weight: normal; padding: 0.2em 0.45em; white-space: nowrap; }
+[data-sc-pk="stats"] td, [data-sc-pk="move-stats"] td { text-align: center; padding: 0.2em 0.45em; }
 
 [data-sc-pk="evo"] { margin: 0.2em 0; padding-left: 0; list-style-type: none; }
 [data-sc-pk="evo"] [data-sc-pk="evo"] { padding-left: 1em; }
