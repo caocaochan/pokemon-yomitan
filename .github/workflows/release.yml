@@ -1,0 +1,53 @@
+# Builds the dictionary and publishes it as the newest GitHub release.
+# Yomitan's update check reads index.json from releases/latest, so every run of this
+# workflow becomes the update installed copies are offered.
+#
+# Run: Actions → release → Run workflow   (or: gh workflow run release.yml)
+
+name: release
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: Swatinem/rust-cache@v2
+
+      # Source data is pinned by commit in src/fetch.rs; the cache key follows those pins.
+      - uses: actions/cache@v6
+        with:
+          path: cache
+          key: source-data-${{ hashFiles('src/fetch.rs') }}
+
+      - run: cargo test --release
+
+      - run: cargo build --release
+
+      - name: Fetch source data
+        run: ./target/release/pokeyomi fetch
+
+      - name: Build dictionary
+        env:
+          POKEYOMI_REPO: ${{ github.repository }}
+        run: ./target/release/pokeyomi build
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          rev=$(jq -r .revision dist/index.json)
+          gh release create "v$rev" dist/pokemon-zh.zip dist/index.json build/pinyin_review.tsv \
+            --target "$GITHUB_SHA" --title "宝可梦 (PokéAPI) $rev" --notes-file build/release-notes.md --latest

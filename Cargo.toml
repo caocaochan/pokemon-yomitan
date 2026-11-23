@@ -1,0 +1,17 @@
+[package]
+name = "pokeyomi"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+csv = "1.4.0"
+flate2 = "1.1.11"
+image = { version = "0.25.10", default-features = false, features = ["png"] }
+jsonschema = { version = "0.63.1", default-features = false }
+rayon = "1.12.0"
+regex = "1.13.2"
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"
+ureq = "2"
+webp = { version = "0.3.1", default-features = false }
+zip = { version = "9.8.2", default-features = false, features = ["deflate"] }

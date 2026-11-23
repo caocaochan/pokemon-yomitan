@@ -1,0 +1,67 @@
+/* Scoped automatically by Yomitan to [data-dictionary="宝可梦 (PokéAPI)"].
+   Colours are theme-neutral (work on light and dark popups). */
+
+[data-sc-pk="head"] { display: flex; gap: 0.6em; align-items: flex-start; }
+[data-sc-pk="head-text"] { flex: 1; min-width: 0; }
+[data-sc-pk="dex"] { font-weight: bold; opacity: 0.6; margin-right: 0.4em; }
+[data-sc-pk="names"] { display: inline; }
+[data-sc-pk="names"] > span { margin-right: 0.5em; }
+[data-sc-pk="en-name"] { font-weight: bold; }
+[data-sc-pk="ja-name"], [data-sc-pk="ja-kana"], [data-sc-pk="roma"], [data-sc-pk="alt-script"] { opacity: 0.7; }
+[data-sc-pk="genus"] { opacity: 0.8; font-size: 0.9em; }
+[data-sc-pk="types"] { margin: 0.2em 0; }
+
+[data-sc-pk="type"], [data-sc-pk="class"] {
+  display: inline-block; padding: 0 0.45em; margin: 0.1em 0.3em 0.1em 0;
+  border-radius: 0.3em; color: #fff; font-size: 0.85em; line-height: 1.5;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.6); background-color: #888;
+}
+[data-sc-type="normal"]   { background-color: #9fa19f; }
+[data-sc-type="fighting"] { background-color: #ff8000; }
+[data-sc-type="flying"]   { background-color: #81b9ef; }
+[data-sc-type="poison"]   { background-color: #9141cb; }
+[data-sc-type="ground"]   { background-color: #915121; }
+[data-sc-type="rock"]     { background-color: #afa981; }
+[data-sc-type="bug"]      { background-color: #91a119; }
+[data-sc-type="ghost"]    { background-color: #704170; }
+[data-sc-type="steel"]    { background-color: #60a1b8; }
+[data-sc-type="fire"]     { background-color: #e62829; }
+[data-sc-type="water"]    { background-color: #2980ef; }
+[data-sc-type="grass"]    { background-color: #3fa129; }
+[data-sc-type="electric"] { background-color: #fac000; }
+[data-sc-type="psychic"]  { background-color: #ef4179; }
+[data-sc-type="ice"]      { background-color: #3dcef3; }
+[data-sc-type="dragon"]   { background-color: #5060e1; }
+[data-sc-type="dark"]     { background-color: #624d4e; }
+[data-sc-type="fairy"]    { background-color: #ef70ef; }
+[data-sc-type="stellar"]  { background-color: #40b5a5; }
+[data-sc-class="physical"] { background-color: #c92112; }
+[data-sc-class="special"]  { background-color: #4f5870; }
+[data-sc-class="status"]   { background-color: #8c888c; }
+
+[data-sc-pk="facts"], [data-sc-pk="stats"], [data-sc-pk="move-stats"] {
+  border-collapse: collapse; margin: 0.3em 0; font-size: 0.9em;
+}
+[data-sc-pk="facts"] th { text-align: left; font-weight: normal; opacity: 0.7; padding: 0.05em 0.6em 0.05em 0; white-space: nowrap; vertical-align: top; }
+[data-sc-pk="facts"] td { padding: 0.05em 0; }
+[data-sc-pk="stats"] th, [data-sc-pk="move-stats"] th { font-weight: normal; opacity: 0.7; padding: 0 0.35em; white-space: nowrap; }
+[data-sc-pk="stats"] td, [data-sc-pk="move-stats"] td { text-align: center; padding: 0 0.35em; border-top: 1px solid rgba(128, 128, 128, 0.4); }
+
+[data-sc-pk="evo"] { margin: 0.2em 0; padding-left: 0; list-style-type: none; }
+[data-sc-pk="evo"] [data-sc-pk="evo"] { padding-left: 1em; }
+[data-sc-pk="evo-cur"] { font-weight: bold; }
+[data-sc-pk="evo-cond"], [data-sc-pk="evo-arrow"] { opacity: 0.7; font-size: 0.9em; }
+
+[data-sc-pk="dex-zh"], [data-sc-pk="dex-en"] { margin-top: 0.3em; }
+[data-sc-pk="dex-zh"] > div, [data-sc-pk="dex-en"] > div { display: inline; }
+[data-sc-pk="ver"] { font-size: 0.8em; opacity: 0.6; }
+[data-sc-pk="zh"] { margin-top: 0.3em; }
+[data-sc-pk="en"] { opacity: 0.85; }
+[data-sc-pk="effect"] { margin-top: 0.3em; font-size: 0.9em; opacity: 0.85; }
+[data-sc-pk="banner"] { padding: 0.15em 0.4em; margin-bottom: 0.3em; border-left: 3px solid rgba(128, 128, 128, 0.6); font-size: 0.9em; }
+[data-sc-pk="meta"] > span { margin-right: 0.6em; font-size: 0.9em; opacity: 0.75; }
+
+[data-sc-pk="more"] { margin-top: 0.3em; }
+[data-sc-pk="more"] summary { cursor: pointer; opacity: 0.75; font-size: 0.9em; }
+[data-sc-pk="form"] { display: flex; align-items: center; gap: 0.4em; flex-wrap: wrap; }
+[data-sc-pk="users"] { font-size: 0.9em; margin-top: 0.3em; }
